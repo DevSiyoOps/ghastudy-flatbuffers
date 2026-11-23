@@ -11,11 +11,12 @@ on:
 
 jobs:
   stale:
+    timeout-minutes: 30
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
-    - uses: actions/stale@v10
+    - uses: actions/stale@1e223db275d687790206a7acac4d1a11bd6fe629 # v10
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         operations-per-run: 500
@@ -34,4 +35,3 @@ jobs:
         days-before-pr-close: 14 # 2 week
         exempt-pr-labels: not-stale
         exempt-draft-pr: false
-
